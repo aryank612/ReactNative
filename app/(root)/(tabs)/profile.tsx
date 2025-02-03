@@ -19,8 +19,8 @@ interface SettingsItemProps {
 }
 
 const SettingsItem=({icon,title,onPress,textStyle,showArrow=true}
-  : SettingsItemProps)=>(
-  <TouchableOpacity className='flex flex-row items-center justify-between
+  : (SettingsItemProps))=>(
+  <TouchableOpacity onPress={onPress} className='flex flex-row items-center justify-between
   py-3'>
     <View className='flex flex-row items-center gap-3'>
       <Image source={icon} className='size-6'/>
@@ -40,10 +40,10 @@ const profile = () => {
 
     if(result) {
       Alert.alert('Success','You have been logged out successfully');
-    refetch({});
-  }
-  else
-      {Alert.alert('Error','An error occured while logging out')}
+      refetch({});
+    } else{
+      Alert.alert('Error','An error occured while logging out')
+    }
   };
   return (
     <SafeAreaView className='h-full bg-white'>

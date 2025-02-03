@@ -75,10 +75,10 @@ export async function login(){
 
 export async function logout(){
     try{
-        await account.deleteSession('current')
-        return true;
+        const result =  await account.deleteSession('current')
+        return result;
 
-    } catch(error){
+    }   catch(error){
         console.error(error);
         return false;
     }

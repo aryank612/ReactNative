@@ -33,7 +33,6 @@ const Explore = () => {
     },
     skip: true,
   });
-
   useEffect(() => {
     refetch({
       filter: params.filter!,
